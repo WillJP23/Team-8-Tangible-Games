@@ -1,2 +1,3 @@
 # Team 8: Development Portfolio
-Github for the group Tangible Games Project
+- Contains photos and videos of developing skills in lessons.
+- Contains documentation of the projects development
