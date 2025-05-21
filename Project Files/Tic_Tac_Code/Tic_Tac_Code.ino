@@ -20,92 +20,98 @@ void setup()
   pinMode(4, OUTPUT);
   pinMode(3, OUTPUT);
   pinMode(2, OUTPUT);
-  //GreenRed = false, means that the current player is red
-  bool Pos1 = false, Pos2 = false, Pos3 = false, Pos4 = false, Pos5 = false, Pos6 = false, Pos7 = false, Pos8 = false, Pos9 = false, GreenRed = false;
-  string Pos;
+  //greenred = false, means that the current player is red
+  bool pos1 = false, pos2 = false, pos3 = false, pos4 = false, pos5 = false, pos6 = false, pos7 = false, pos8 = false, pos9 = false, greenred = false;
+  //variables for tracking greenred posisitions, used for calculating winner
+  bool r1 = false, r2 = false, r3 = false, r4 = false, r5 = false, r6 = false, r7 = false, r8 = false, r9 = false;
+  bool g1 = false, g2 = false, g3 = false, g4 = false, g5 = false, g6 = false, g7 = false, g8 = false, g9 = false;
+  string pos;
 }
 
 void loop()
 {
   //Outputs Current Player to Console
-  if (GreenRed = false) {
+  if (greenred = false) {
     cout << "Current Player: Red\n";
     cout << "Please Select a Valid Square\n":
     //add a grid here?
-    cin >> Pos;
+    cin >> pos;
     //determines which square is chosen
-    if (Pos = '1') {
-      Pos1 = true;
+    if (pos = '1') {
+      if 
+      pos1 = true;
     }
     else if (Pos = '2') {
-      Pos2 = true;
+      pos2 = true;
     }
     else if (Pos = '3') {
-      Pos2 = true;
+      pos3 = true;
     }
     else if (Pos = '4') {
-      Pos2 = true;
+      pos4 = true;
     }
     else if (Pos = '5') {
-      Pos2 = true;
+      pos5 = true;
     }
     else if (Pos = '6') {
-      Pos2 = true;
+      pos6 = true;
     }
     else if (Pos = '7') {
-      Pos2 = true;
+      pos7 = true;
     }
     else if (Pos = '8') {
-      Pos2 = true;
+      pos8 = true;
     }
     else if (Pos = '9') {
-      Pos2 = true;
+      pos9 = true;
     }    
-  }
-  else if (GreenRed = true) {
+  } 
+  else if (greenred = true) {
     cout << "Current Player: Green\n";
     cout << "Please Select a Valid Square\n":
-    cin >> Pos;  
+    cin >> pos;  
 
-    if (Pos = '1') {
-      Pos1 = true;
+    if (pos = '1') {
+      pos1 = true;
     }
     else if (Pos = '2') {
-      Pos2 = true;
+      pos2 = true;
     }
     else if (Pos = '3') {
-      Pos2 = true;
+      pos3 = true;
     }
     else if (Pos = '4') {
-      Pos2 = true;
+      pos4 = true;
     }
     else if (Pos = '5') {
-      Pos2 = true;
+      pos5 = true;
     }
     else if (Pos = '6') {
-      Pos2 = true;
+      pos6 = true;
     }
     else if (Pos = '7') {
-      Pos2 = true;
+      pos7 = true;
     }
     else if (Pos = '8') {
-      Pos2 = true;
+      pos8 = true;
     }
     else if (Pos = '9') {
-      Pos2 = true;
+      pos9 = true;
     }  
   }
 
   //if current player is green/red and a posistion 1 is selected, then 
-  if (Pos1 = true && GreenRed = false) {
+  if (pos1 = true && greenred = false) {
     digitalWrite(13, HIGH);
-    GreenRed = true;
-    Pos1 = false;
+    greenred = true;
+    pos1 = false;
+    r1 = true;
   }
-  else if (Pos1 = true && GreenRed = true) {
+  else if (pos1 = true && greenred = true) {
      digitalWrite(12, HIGH);
-    GreenRed = false;
-    Pos1 = false;
+    greenred = false;
+    pos1 = false;
+    g1 = true;
   }
 
   //need to work out the rest
