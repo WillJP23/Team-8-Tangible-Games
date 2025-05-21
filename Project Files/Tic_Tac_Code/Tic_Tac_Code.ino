@@ -75,17 +75,19 @@ void loop()
   if (greenwin = true) {
     cout << "Winner: Green Player""\n";
     gwins++;
+    cout << "Green Wins: " << gwins << "\n";
+    cout << "Red Wins: " << rwins << "\n";
     //need to add other positions after
     digitalWrite(12, HIGH);
   }
   if (redwin = true) {
     cout << "Winner: Red Player\n";
     rwins++;
+    cout << "Green Win Total: " << gwins << "\n";
+    cout << "Red Win Total: " << rwins << "\n";
     //need to add other positions after
     digitalWrite(13, HIGH);
   }
-  cout << "Green Wins: " << gwins << "\n";
-  cout << "Red Wins: " << rwins << "\n";
 
 //---------------------------------------------------------------------------------------------------
   //Outputs Current Player to Console, greenred false means current player is red
