@@ -26,7 +26,7 @@ void setup()
   bool r1 = false, r2 = false, r3 = false, r4 = false, r5 = false, r6 = false, r7 = false, r8 = false, r9 = false, redwin = false;
   bool g1 = false, g2 = false, g3 = false, g4 = false, g5 = false, g6 = false, g7 = false, g8 = false, g9 = false, greenwin = false;
   int gwins = 0, rwins = 0;
-  string pos;
+  char pos;
 }
 
 void loop()
