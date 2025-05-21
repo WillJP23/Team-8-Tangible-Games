@@ -25,6 +25,7 @@ void setup()
   //variables for tracking greenred posisitions, used for calculating winner
   bool r1 = false, r2 = false, r3 = false, r4 = false, r5 = false, r6 = false, r7 = false, r8 = false, r9 = false, redwin = false;
   bool g1 = false, g2 = false, g3 = false, g4 = false, g5 = false, g6 = false, g7 = false, g8 = false, g9 = false, greenwin = false;
+  int gwins = 0, rwins = 0;
   string pos;
 }
 
@@ -72,15 +73,19 @@ void loop()
 
   //winner script
   if (greenwin = true) {
-    cout << "Winner: Green Player\n";
+    cout << "Winner: Green Player""\n";
+    gwins++;
     //need to add other positions after
     digitalWrite(12, HIGH);
   }
   if (redwin = true) {
     cout << "Winner: Red Player\n";
+    rwins++;
     //need to add other positions after
     digitalWrite(13, HIGH);
   }
+  cout << "Green Wins: " << gwins << "\n";
+  cout << "Red Wins: " << rwins << "\n";
 
 //---------------------------------------------------------------------------------------------------
   //Outputs Current Player to Console, greenred false means current player is red
