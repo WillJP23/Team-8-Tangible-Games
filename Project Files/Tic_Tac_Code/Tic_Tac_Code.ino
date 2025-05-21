@@ -38,6 +38,7 @@ void loop()
     cout << "Current Player: Green\n";
   }
 
+//---------------------------------------------------------------------------------------------------
   cout << "Please Select a Valid Square\n":
   //add a grid here?
   cin >> pos;
@@ -71,6 +72,7 @@ void loop()
     pos9 = true;
   }    
 
+//---------------------------------------------------------------------------------------------------
   //if current player is green/red and a posistion 1 is selected, then 
   if (pos1 = true && greenred = false) {
     digitalWrite(13, HIGH);
