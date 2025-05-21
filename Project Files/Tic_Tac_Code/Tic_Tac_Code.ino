@@ -51,6 +51,7 @@ void loop()
     greenwin = true;
   if (g3 = true && g5 = true && g7 = true )
     greenwin = true;
+
   //Red Win Conditions
     if (r1 = true && r2 = true && r3 = true )
     redwin = true;
@@ -69,7 +70,6 @@ void loop()
   if (r3 = true && r5 = true && r7 = true )
     redwin = true;
 
-//---------------------------------------------------------------------------------------------------
   //winner script
   if (greenwin = true) {
     cout << "Winner: Green Player\n";
@@ -83,12 +83,15 @@ void loop()
   }
 
 //---------------------------------------------------------------------------------------------------
-  //Outputs Current Player to Console
+  //Outputs Current Player to Console, greenred false means current player is red
   if (greenred = false) {
     cout << "Current Player: Red\n";
   } 
   else if (greenred = true) {
     cout << "Current Player: Green\n";
+  }
+  else {
+    cout << "Somethings Gone Wrong with the Current Player Tracker";
   }
 
 //---------------------------------------------------------------------------------------------------
