@@ -20,6 +20,7 @@ void setup()
   pinMode(4, OUTPUT);
   pinMode(3, OUTPUT);
   pinMode(2, OUTPUT);
+}
   //greenred = false, means that the current player is red
   bool pos1 = false, pos2 = false, pos3 = false, pos4 = false, pos5 = false, pos6 = false, pos7 = false, pos8 = false, pos9 = false, greenred = false;
   //variables for tracking greenred posisitions, used for calculating winner
@@ -27,7 +28,6 @@ void setup()
   bool g1 = false, g2 = false, g3 = false, g4 = false, g5 = false, g6 = false, g7 = false, g8 = false, g9 = false, greenwin = false;
   int gwins = 0, rwins = 0;
   char pos;
-}
 
 void loop()
 {
