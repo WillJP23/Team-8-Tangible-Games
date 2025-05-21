@@ -72,7 +72,7 @@ void loop()
     redwin = true;
 
   //winner script
-  if (greenwin = true) {
+  if (greenwin == true) {
     Serial.print ("Winner: Green Player\n");
     gwins++;
     Serial.print ("Green Wins: " << gwins << "\n");
@@ -80,7 +80,7 @@ void loop()
     //need to add other positions after
     digitalWrite(12, HIGH);
   }
-  if (redwin = true) {
+  if (redwin == true) {
     Serial.print ("Winner: Red Player\n");
     rwins++;
     Serial.print ("Green Win Total: " << gwins << "\n");
@@ -91,7 +91,7 @@ void loop()
 
 //---------------------------------------------------------------------------------------------------
   //Outputs Current Player to Console, greenred false means current player is red
-  if (greenred = false) {
+  if (greenred == false) {
     Serial.print ("Current Player: Red\n");
   } 
   else if (greenred = true) {
@@ -107,33 +107,33 @@ void loop()
   cin >> pos;
   //determines which square is chosen
   //can add code below this section into this part to make more effecient
-  if (pos = '1') {
-    pos1 = true;
+  if (pos == '1') {
+    pos1 == true;
     //here for example: if / else if
   }
-  else if (pos = '2') {
-    pos2 = true;
+  else if (pos == '2') {
+    pos2 == true;
   }
   else if (pos = '3') {
-    pos3 = true;
+    pos3 == true;
   }
   else if (pos = '4') {
-    pos4 = true;
+    pos4 == true;
   }
   else if (pos = '5') {
-    pos5 = true;
+    pos5 == true;
   }
-  else if (pos = '6') {
-    pos6 = true;
+  else if (pos == '6') {
+    pos6 == true;
   }
-  else if (pos = '7') {
-    pos7 = true;
+  else if (pos == '7') {
+    pos7 == true;
   }
   else if (pos = '8') {
     pos8 = true;
   }
-  else if (pos = '9') {
-    pos9 = true;
+  else if (pos == '9') {
+    pos9 == true;
   }
   else {
     //make sure this works
