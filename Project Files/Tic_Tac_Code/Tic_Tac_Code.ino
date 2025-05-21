@@ -33,72 +33,43 @@ void loop()
   //Outputs Current Player to Console
   if (greenred = false) {
     cout << "Current Player: Red\n";
-    cout << "Please Select a Valid Square\n":
-    //add a grid here?
-    cin >> pos;
-    //determines which square is chosen
-    if (pos = '1') {
-      if 
-      pos1 = true;
-    }
-    else if (Pos = '2') {
-      pos2 = true;
-    }
-    else if (Pos = '3') {
-      pos3 = true;
-    }
-    else if (Pos = '4') {
-      pos4 = true;
-    }
-    else if (Pos = '5') {
-      pos5 = true;
-    }
-    else if (Pos = '6') {
-      pos6 = true;
-    }
-    else if (Pos = '7') {
-      pos7 = true;
-    }
-    else if (Pos = '8') {
-      pos8 = true;
-    }
-    else if (Pos = '9') {
-      pos9 = true;
-    }    
   } 
   else if (greenred = true) {
     cout << "Current Player: Green\n";
-    cout << "Please Select a Valid Square\n":
-    cin >> pos;  
-
-    if (pos = '1') {
-      pos1 = true;
-    }
-    else if (Pos = '2') {
-      pos2 = true;
-    }
-    else if (Pos = '3') {
-      pos3 = true;
-    }
-    else if (Pos = '4') {
-      pos4 = true;
-    }
-    else if (Pos = '5') {
-      pos5 = true;
-    }
-    else if (Pos = '6') {
-      pos6 = true;
-    }
-    else if (Pos = '7') {
-      pos7 = true;
-    }
-    else if (Pos = '8') {
-      pos8 = true;
-    }
-    else if (Pos = '9') {
-      pos9 = true;
-    }  
   }
+
+  cout << "Please Select a Valid Square\n":
+  //add a grid here?
+  cin >> pos;
+  //determines which square is chosen
+  if (pos = '1') {
+    if 
+    pos1 = true;
+  }
+  else if (Pos = '2') {
+    pos2 = true;
+  }
+  else if (Pos = '3') {
+    pos3 = true;
+  }
+  else if (Pos = '4') {
+    pos4 = true;
+  }
+  else if (Pos = '5') {
+    pos5 = true;
+  }
+  else if (Pos = '6') {
+    pos6 = true;
+  }
+  else if (Pos = '7') {
+    pos7 = true;
+  }
+  else if (Pos = '8') {
+    pos8 = true;
+  }
+  else if (Pos = '9') {
+    pos9 = true;
+  }    
 
   //if current player is green/red and a posistion 1 is selected, then 
   if (pos1 = true && greenred = false) {
