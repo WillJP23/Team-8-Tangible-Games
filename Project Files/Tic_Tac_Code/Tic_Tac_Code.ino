@@ -20,37 +20,68 @@ void setup()
   pinMode(4, OUTPUT);
   pinMode(3, OUTPUT);
   pinMode(2, OUTPUT);
-    //greenred = false, means that the current player is red
-  bool pos1 = false, pos2 = false, pos3 = false, pos4 = false, pos5 = false, pos6 = false, pos7 = false, pos8 = false, pos9 = false, greenred = false;
-  //variables for tracking greenred posisitions, used for calculating winner
-  bool r1 = false, r2 = false, r3 = false, r4 = false, r5 = false, r6 = false, r7 = false, r8 = false, r9 = false, redwin = false;
-  bool g1 = false, g2 = false, g3 = false, g4 = false, g5 = false, g6 = false, g7 = false, g8 = false, g9 = false, greenwin = false;
-  int gwins = 0, rwins = 0;
-  char pos;
 }
 
 void loop()
 {
+  bool r1 = false; 
+  bool r2 = false; 
+  bool r3 = false; 
+  bool r4 = false; 
+  bool r5 = false; 
+  bool r6 = false; 
+  bool r7 = false; 
+  bool r8 = false; 
+  bool r9 = false; 
+  bool redwin = false;
+  //green
+  bool g1 = false;
+  bool g2 = false;
+  bool g3 = false;
+  bool g4 = false;
+  bool g5 = false;
+  bool g6 = false;
+  bool g7 = false;
+  bool g8 = false;
+  bool g9 = false;
+    //greenred = false, means that the current player is red - Maybe redundant?
+  bool pos1 = false;
+  bool pos2 = false;
+  bool pos3 = false; 
+  bool pos4 = false; 
+  bool pos5 = false; 
+  bool pos6 = false; 
+  bool pos7 = false; 
+  bool pos8 = false; 
+  bool pos9 = false; 
+  bool greenred = false;
+  //variables for tracking greenred posisitions, used for calculating winner
+  bool greenwin = false;
+  int gwins = 0;
+  int rwins = 0;
+  char pos;
+
   //sequence determining if a winner is here
   //Green Win Conditions
   // - Horizontals
-  if (g1 == true && g2 == true && g3 == true )
+  if ((g1 == true) && (g2 == true) && (g3 == true))
     greenwin = true;
-  if (g4 == true && g5 == true && g6 == true )
+    return 0;
+  if ((g4 == true) && (g5 == true) && (g6 == true))
     greenwin = true;
-  if (g7 == true && g8 == true && g9 == true )
+  if ((g7 == true) && (g8 == true) && (g9 == true))
     greenwin = true;
   // - Verticals
-  if (g1 == true && g4 == true && g7 == true )
+  if ((g1 == true) && (g4 == true) && (g7 == true))
     greenwin = true;
-  if (g2 == true && g5 == true && g8 == true )
+  if ((g2 == true) && (g5 == true) && (g8 == true))
     greenwin = true;
-  if (g3 == true && g6 == true && g9 == true )
+  if ((g3 == true) && (g6 == true) && (g9 == true))
     greenwin = true;
   // - Diagonals
-  if (g1 == true && g5 == true && g9 == true )
+  if ((g1 == true) && (g5 == true) && (g9 == true))
     greenwin = true;
-  if (g3 == true && g5 == true && g7 == true )
+  if ((g3 == true) && (g5 == true) && (g7 == true))
     greenwin = true;
 
   //Red Win Conditions
@@ -73,18 +104,22 @@ void loop()
 
   //winner script
   if (greenwin == true) {
-    Serial.print ("Winner: Green Player\n");
+    Serial.println ("Winner: Green Player\n");
     gwins++;
-    Serial.print ("Green Wins: " << gwins << "\n");
-    Serial.print ("Red Wins: " << rwins << "\n");
+    Serial.print ("Green Win Toral: ");
+    Serial.println (gwins);
+    Serial.print ("Red Win Toral: ");
+    Serial.println (rwins);
     //need to add other positions after
     digitalWrite(12, HIGH);
   }
   if (redwin == true) {
-    Serial.print ("Winner: Red Player\n");
+    Serial.println ("Winner: Red Player\n");
     rwins++;
-    Serial.print ("Green Win Total: " << gwins << "\n");
-    Serial.print ("Red Win Total: " << rwins << "\n");
+    Serial.print ("Green Win Total: ");
+    Serial.println (gwins);
+    Serial.print ("Red Win Total: ");
+    Serial.println (rwins);
     //need to add other positions after
     digitalWrite(13, HIGH);
   }
@@ -92,17 +127,17 @@ void loop()
 //---------------------------------------------------------------------------------------------------
   //Outputs Current Player to Console, greenred false means current player is red
   if (greenred == false) {
-    Serial.print ("Current Player: Red\n");
+    Serial.println ("Current Player: Red");
   } 
   else if (greenred = true) {
-    Serial.print ("Current Player: Green\n");
+    Serial.println ("Current Player: Green");
   }
   else {
-    Serial.print ("Somethings Gone Wrong with the Current Player Tracker");
+    Serial.println ("Somethings Gone Wrong with the Current Player Tracker");
   }
 
 //---------------------------------------------------------------------------------------------------
-  Serial.print ("Please Select a Valid Square\n"):
+  Serial.println ("Please Select a Valid Square");
   //add a grid here?
   cin >> pos;
   //determines which square is chosen
