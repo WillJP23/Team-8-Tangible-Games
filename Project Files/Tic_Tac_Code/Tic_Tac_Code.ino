@@ -22,8 +22,6 @@ void setup()
   pinMode(2, OUTPUT);
 }
 
-void loop()
-{
   //put outside loop?
   bool r1 = false; 
   bool r2 = false; 
@@ -62,6 +60,8 @@ void loop()
   int rwins = 0;
   char pos;
 
+void loop()
+{
   //sequence determining if a winner is here
   //Green Win Conditions
   // - Horizontals
