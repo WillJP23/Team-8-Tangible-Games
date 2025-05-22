@@ -24,6 +24,7 @@ void setup()
 
 void loop()
 {
+  //put outside loop?
   bool r1 = false; 
   bool r2 = false; 
   bool r3 = false; 
@@ -139,7 +140,9 @@ void loop()
 //---------------------------------------------------------------------------------------------------
   Serial.println ("Please Select a Valid Square");
   //add a grid here?
-  cin >> pos;
+  if (Serial.available() > 0) {
+        pos = Serial.read();
+    }
   //determines which square is chosen
   //can add code below this section into this part to make more effecient
   if (pos == '1') {
