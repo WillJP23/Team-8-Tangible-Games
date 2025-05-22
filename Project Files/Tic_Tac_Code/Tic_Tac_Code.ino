@@ -159,18 +159,22 @@ void loop()
   }
   //determines which square is chosen
   //can add code below this section into this part to make more effecient
-  if ((pos == '1') && (greenred == false)) {
-    
+  if ((pos == '1') && (r1 == false) && (g1 == false)) {
+    if ((greenred == false) && (g1 == false)) {
     digitalWrite(13, HIGH);
     greenred = true;
+    r1 = true;
+    }
+    if ((greenred == true) && (r1 == false)) {
+    digitalWrite(11, HIGH);
+    greenred = false;
+    g1 = true;
+    }
     message = false;
     pos1 = false;
-    r1 = true;
-  else if 
-  
   }
     //here for example: if / else if
-  else if (pos == '1') {
+  else if (pos == '2') {
     pos2 == true;
   }
   else if (pos = '3') {
@@ -200,15 +204,6 @@ void loop()
   }
 
   //if current player is green/red and a posistion 1 is selected, then 
-
-  if ((pos1 == true) && (greenred == true)) {
-     digitalWrite(12, HIGH);
-    greenred = false;
-    message = false;
-    pos1 = false;
-    g1 = true;
-  }
-
   //need to work out the rest
   digitalWrite(A5, HIGH);
   digitalWrite(A4, HIGH);
