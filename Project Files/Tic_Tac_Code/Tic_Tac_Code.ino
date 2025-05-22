@@ -20,6 +20,7 @@ void setup()
   pinMode(4, OUTPUT);
   pinMode(3, OUTPUT);
   pinMode(2, OUTPUT);
+  Serial.begin(9600);
 }
 
   //put outside loop?
@@ -56,9 +57,10 @@ void setup()
   bool greenred = false;
   //variables for tracking greenred posisitions, used for calculating winner
   bool greenwin = false;
+  bool message = false;
   int gwins = 0;
   int rwins = 0;
-  char pos;
+  char pos = 0;
 
 void loop()
 {
@@ -67,7 +69,6 @@ void loop()
   // - Horizontals
   if ((g1 == true) && (g2 == true) && (g3 == true))
     greenwin = true;
-    return 0;
   if ((g4 == true) && (g5 == true) && (g6 == true))
     greenwin = true;
   if ((g7 == true) && (g8 == true) && (g9 == true))
@@ -84,9 +85,8 @@ void loop()
     greenwin = true;
   if ((g3 == true) && (g5 == true) && (g7 == true))
     greenwin = true;
-
   //Red Win Conditions
-    if (r1 == true && r2 == true && r3 == true )
+  if (r1 == true && r2 == true && r3 == true )
     redwin = true;
   if (r4 == true && r5 == true && r6 == true )
     redwin = true;
@@ -125,31 +125,29 @@ void loop()
     digitalWrite(13, HIGH);
   }
 
-//---------------------------------------------------------------------------------------------------
   //Outputs Current Player to Console, greenred false means current player is red
-  if (greenred == false) {
+  if ((greenred == false) && (message == false)) {
     Serial.println ("Current Player: Red");
+    message = true;
   } 
-  else if (greenred = true) {
+  if ((greenred == true) && (message == false)) {
     Serial.println ("Current Player: Green");
-  }
-  else {
-    Serial.println ("Somethings Gone Wrong with the Current Player Tracker");
+    message = true;
   }
 
-//---------------------------------------------------------------------------------------------------
-  Serial.println ("Please Select a Valid Square");
-  //add a grid here?
   if (Serial.available() > 0) {
-        pos = Serial.read();
-    }
+    Serial.println ("Please Select a Valid Square");
+    //add a grid here?
+    pos = Serial.read();
+    Serial.println(pos);
+  }
   //determines which square is chosen
   //can add code below this section into this part to make more effecient
   if (pos == '1') {
-    pos1 == true;
+    pos1 = true;
     //here for example: if / else if
   }
-  else if (pos == '2') {
+  else if (pos == '1') {
     pos2 == true;
   }
   else if (pos = '3') {
@@ -178,15 +176,14 @@ void loop()
     Serial.print ("Please Input a Valid Posistion\n");
   }
 
-//---------------------------------------------------------------------------------------------------
   //if current player is green/red and a posistion 1 is selected, then 
-  if (pos1 == true && greenred == false) {
+  if ((pos1 == true) && (greenred == false)) {
     digitalWrite(13, HIGH);
     greenred = true;
     pos1 = false;
     r1 = true;
   }
-  else if (pos1 == true && greenred == true) {
+  else if ((pos1 == true) && (greenred == true)) {
      digitalWrite(12, HIGH);
     greenred = false;
     pos1 = false;
